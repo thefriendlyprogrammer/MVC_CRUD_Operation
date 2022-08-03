@@ -1,0 +1,29 @@
+﻿@model List<New_CRUD_Operation.Models.DeveloperModel>
+
+<table class="table-bordered table-hover table-responsive table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Email ID</th>
+        <th>Technology</th>
+        <th>Designation</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.DID</td>
+    <td>@item.DNAME</td>
+    <td>@item.DNUMBER</td>
+    <td>@item.DEMAILID</td>
+    <td>@item.DTECHNOLOGY</td>
+    <td>@item.DESIGNATION</td>
+    <td><a class="btn btn-warning" href="@Url.Action("Update", "Home", new { item.DID})">Edit</a></td>
+    <td><a class="btn btn-danger" href="@Url.Action("Delete", "Home", new { item.DID})">Delete</a></td>
+</tr>
+    } 
+</table>
+<a class="btn btn-info" href="@Url.Action("Index", "Home")">Home</a>
+<a class="btn btn-primary" href="@Url.Action("Create", "Home")">Create</a>

@@ -1,0 +1,36 @@
+﻿@model New_CRUD_Operation.Models.AvengerModel
+
+<style>
+    .error{
+        color:#ff00dc;
+    }
+</style>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<div>
+    <label class="label">User ID</label>
+    @Html.TextBoxFor(m => m.AEMAILID, new { @class = "form-control", @placeholder = "Email ID", @required = "required" })
+    @Html.ValidationMessageFor(m => m.AEMAILID, "", new { @class = "text-danger" })
+    <span class="error">@TempData["Email"]</span>
+</div>
+
+<div>
+    <label class="label">Password</label>
+    @Html.TextBoxFor(m => m.APASSWORD, new { @class = "form-control", @placeholder = "********", @required = "required" })
+    @Html.ValidationMessageFor(m => m.APASSWORD, "", new { @class = "text-danger" })
+    <span class="error">@TempData["Password"]</span>
+</div>
+
+<div>
+    <input type="submit" value="Login" class="btn btn-primary" />
+    <a class="btn btn-primary" href="@Url.Action("SignUp", "Home")">SignUp</a>
+</div>
+
+    
+
+}
+
+
+
+

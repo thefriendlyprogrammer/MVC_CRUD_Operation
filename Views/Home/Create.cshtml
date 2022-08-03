@@ -1,0 +1,94 @@
+﻿@model New_CRUD_Operation.Models.DeveloperModel
+
+@using(Html.BeginForm("Create", "Home", FormMethod.Post))
+ {
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4">Please Fill Developers Details</p>
+
+                                <form class="mx-1 mx-md-4">
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            @Html.TextBoxFor(m => m.DID, new { @Class = "form-control", @type = "hidden", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example1c">Your Name</label>
+                                            @Html.TextBoxFor(m => m.DNAME, new { @Class = "form-control", @placeholder = "Alok Kushwaha", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DNAME, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example3c">Your Number</label>
+                                            @Html.TextBoxFor(m => m.DNUMBER, new { @Class = "form-control", @placeholder = "+91 XXXX", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DNUMBER, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4c">Your Email</label>
+                                            @Html.TextBoxFor(m => m.DEMAILID, new { @Class = "form-control", @placeholder = "abc@gmail.com", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DEMAILID, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4c">Your Technology</label>
+                                            @Html.TextBoxFor(m => m.DTECHNOLOGY, new { @Class = "form-control", @placeholder = "Trainee", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DTECHNOLOGY, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4c">Your Designation</label>
+                                            @Html.TextBoxFor(m => m.DESIGNATION, new { @Class = "form-control", @placeholder = "Team Leader", @required = "required" })
+                                            @Html.ValidationMessageFor(m => m.DESIGNATION, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @if (ViewBag.Update == "Update")
+                                    {
+                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <a class="btn btn-info" href="@Url.Action("Index", "Home")">Home</a>
+                                </div>
+                                    }
+                                    else
+                                    {
+                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                    <a class="btn btn-info" href="@Url.Action("Index", "Home")">Home</a>
+                                </div>
+                                    }
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ }

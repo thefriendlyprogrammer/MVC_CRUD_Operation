@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Alok_KushwahaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AVENGERS">
+    <Key>
+      <PropertyRef Name="SrNo" />
+    </Key>
+    <Property Name="SrNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ANAME" Type="varchar" MaxLength="100" />
+    <Property Name="AEMAILID" Type="varchar" MaxLength="50" />
+    <Property Name="APASSWORD" Type="varchar" MaxLength="50" />
+    <Property Name="CODE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="NDeveloper">
+    <Key>
+      <PropertyRef Name="DID" />
+    </Key>
+    <Property Name="DID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DNAME" Type="varchar" MaxLength="50" />
+    <Property Name="DEMAILID" Type="varchar" MaxLength="50" />
+    <Property Name="DNUMBER" Type="varchar" MaxLength="14" />
+    <Property Name="DTECHNOLOGY" Type="varchar" MaxLength="50" />
+    <Property Name="DESIGNATION" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Alok_KushwahaModelStoreContainer">
+    <EntitySet Name="AVENGERS" EntityType="Self.AVENGERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NDeveloper" EntityType="Self.NDeveloper" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

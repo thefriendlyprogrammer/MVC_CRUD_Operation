@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Alok_KushwahaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AVENGERS">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ANAME" Type="varchar" MaxLength="100" />
+          <Property Name="AEMAILID" Type="varchar" MaxLength="50" />
+          <Property Name="APASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="CODE" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="NDeveloper">
+          <Key>
+            <PropertyRef Name="DID" />
+          </Key>
+          <Property Name="DID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNAME" Type="varchar" MaxLength="50" />
+          <Property Name="DEMAILID" Type="varchar" MaxLength="50" />
+          <Property Name="DNUMBER" Type="varchar" MaxLength="14" />
+          <Property Name="DTECHNOLOGY" Type="varchar" MaxLength="50" />
+          <Property Name="DESIGNATION" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Alok_KushwahaModelStoreContainer">
+          <EntitySet Name="AVENGERS" EntityType="Self.AVENGERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NDeveloper" EntityType="Self.NDeveloper" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Alok_KushwahaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AVENGER">
+          <Key>
+            <PropertyRef Name="SrNo" />
+          </Key>
+          <Property Name="SrNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ANAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AEMAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NDeveloper">
+          <Key>
+            <PropertyRef Name="DID" />
+          </Key>
+          <Property Name="DID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEMAILID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DNUMBER" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="DTECHNOLOGY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESIGNATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Alok_KushwahaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AVENGERS" EntityType="Self.AVENGER" />
+          <EntitySet Name="NDevelopers" EntityType="Self.NDeveloper" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Alok_KushwahaModelStoreContainer" CdmEntityContainer="Alok_KushwahaEntities">
+          <EntitySetMapping Name="AVENGERS">
+            <EntityTypeMapping TypeName="Alok_KushwahaModel.AVENGER">
+              <MappingFragment StoreEntitySet="AVENGERS">
+                <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+                <ScalarProperty Name="ANAME" ColumnName="ANAME" />
+                <ScalarProperty Name="AEMAILID" ColumnName="AEMAILID" />
+                <ScalarProperty Name="APASSWORD" ColumnName="APASSWORD" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NDevelopers">
+            <EntityTypeMapping TypeName="Alok_KushwahaModel.NDeveloper">
+              <MappingFragment StoreEntitySet="NDeveloper">
+                <ScalarProperty Name="DID" ColumnName="DID" />
+                <ScalarProperty Name="DNAME" ColumnName="DNAME" />
+                <ScalarProperty Name="DEMAILID" ColumnName="DEMAILID" />
+                <ScalarProperty Name="DNUMBER" ColumnName="DNUMBER" />
+                <ScalarProperty Name="DTECHNOLOGY" ColumnName="DTECHNOLOGY" />
+                <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

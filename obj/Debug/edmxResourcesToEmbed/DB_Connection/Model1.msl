@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Alok_KushwahaModelStoreContainer" CdmEntityContainer="Alok_KushwahaEntities">
+    <EntitySetMapping Name="AVENGERS">
+      <EntityTypeMapping TypeName="Alok_KushwahaModel.AVENGER">
+        <MappingFragment StoreEntitySet="AVENGERS">
+          <ScalarProperty Name="SrNo" ColumnName="SrNo" />
+          <ScalarProperty Name="ANAME" ColumnName="ANAME" />
+          <ScalarProperty Name="AEMAILID" ColumnName="AEMAILID" />
+          <ScalarProperty Name="APASSWORD" ColumnName="APASSWORD" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NDevelopers">
+      <EntityTypeMapping TypeName="Alok_KushwahaModel.NDeveloper">
+        <MappingFragment StoreEntitySet="NDeveloper">
+          <ScalarProperty Name="DID" ColumnName="DID" />
+          <ScalarProperty Name="DNAME" ColumnName="DNAME" />
+          <ScalarProperty Name="DEMAILID" ColumnName="DEMAILID" />
+          <ScalarProperty Name="DNUMBER" ColumnName="DNUMBER" />
+          <ScalarProperty Name="DTECHNOLOGY" ColumnName="DTECHNOLOGY" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

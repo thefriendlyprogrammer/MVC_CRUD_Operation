@@ -1,0 +1,40 @@
+﻿@model New_CRUD_Operation.Models.AvengerModel
+
+@using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+{
+    <h1 class="text-capitalize">SignUp</h1>
+    <div class="container-fluid">
+        <div class="">
+            <label class="control-label">Your Name</label>
+            @Html.TextBoxFor(m => m.ANAME, new { @class = "form-control", @placeholder = "Alok Kushwaha"@*, @required = "required"*@ })
+            @Html.ValidationMessageFor(m => m.ANAME, "", new { @class = "text-danger" })
+        </div>
+
+        <div>
+            <label class="control-label">Your Email</label>
+            @Html.TextBoxFor(m => m.AEMAILID, new { @class = "form-control", @placeholder = "abc@gmail.com"@*, @required = "required" *@})
+            @Html.ValidationMessageFor(m => m.AEMAILID, "", new { @class = "text-danger" })
+        </div>
+
+        <div>
+            <label class="control-label">Your Password</label>
+            @Html.TextBoxFor(m => m.APASSWORD, new { @class = "form-control", @placeholder = "Alok@123"@*, @required = "required"*@ })
+            @Html.ValidationMessageFor(m => m.APASSWORD, "", new { @class = "text-danger" })
+        </div>
+
+        <div>
+            <label class="control-label">Your Code</label>
+            @Html.TextBoxFor(m => m.CODE, new { @class = "form-control", @placeholder = "4444" @*, required = "required"*@ })
+            @Html.ValidationMessageFor(m => m.CODE, "", new { @class = "text-danger" })
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary" />
+
+        <p class="text-center text-muted mt-5 mb-0">
+            Have already an account? <a href="~/Home/Login"
+                                        class="fw-bold text-body"><u>Login here</u></a>
+        </p>
+
+    </div>
+}
+
